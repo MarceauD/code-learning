@@ -141,17 +141,17 @@
         "id": "chap1_ex9",
         "chapterId": 1,
         "chapterTitle": "Chapitre 1 : Les Fondations (HTML)",
-        "title": "Formulaire : Les cases à cocher",
-        "description": "Ajoute un `<input>` avec `type=\"checkbox\"` et `id=\"cgu\"`.",
+        "title": "Formulaire : Les Nombres",
+        "description": "Pour gérer des montants financiers, utilise `<input type=\"number\">`. Ajoute un input de ce type avec l'ID `montant`.",
         "startingCode": {
-            "/index.html": "<!DOCTYPE html>\n<html>\n<body>\n  <form>\n    <label for=\"cgu\">Conditions</label>\n  </form>\n</body>\n</html>"
+            "/index.html": "<!DOCTYPE html>\n<html>\n<body>\n  <form>\n    <label for=\"montant\">Somme à investir :</label>\n  </form>\n</body>\n</html>"
         },
         "validation": {
             "type": "dom",
-            "selector": "input#cgu",
+            "selector": "input#montant",
             "property": "type",
-            "expectedValue": "checkbox",
-            "successMessage": "נהדר!"
+            "expectedValue": "number",
+            "successMessage": "Parfait pour les calculs !"
         }
     },
     {
@@ -238,7 +238,7 @@
             "selector": "#badge",
             "property": "padding-top",
             "expectedValue": "20px",
-            "successMessage": "זה נראה הרבה יותר טוב!"
+            "successMessage": "זה נראה הרבה plus טוב!"
         }
     },
     {
@@ -296,52 +296,52 @@
         "id": "chap2_ex8",
         "chapterId": 2,
         "chapterTitle": "Chapitre 2 : L'élégance du Design (CSS)",
-        "title": "L'alignement (Flexbox)",
-        "description": "Utilise `display: flex` sur la classe `.container` pour aligner les deux carrés côte à côte.",
+        "title": "Le Centrage (Flexbox)",
+        "description": "Utilise `display: flex`, `justify-content: center` et `align-items: center` sur le `.container` pour centrer le logo parfaitement au milieu.\n\n(La hauteur est déjà fixée à `100vh`).",
         "startingCode": {
-            "/index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .container {\n      background: #e2e8f0;\n      /* Active flexbox ici */\n    }\n    .box {\n      width: 100px;\n      height: 100px;\n      background: #0284c7;\n      margin: 10px;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"box\"></div>\n    <div class=\"box\"></div>\n  </div>\n</body>\n</html>"
+            "/index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .container {\n      height: 100vh;\n      /* Active flexbox et centre ici */\n    }\n    .logo {\n      padding: 20px;\n      background: #0284c7;\n      color: white;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"logo\">Q-BANK</div>\n  </div>\n</body>\n</html>"
         },
         "validation": {
             "type": "css",
             "selector": ".container",
-            "property": "display",
-            "expectedValue": "flex",
-            "successMessage": "Flexbox, c'est magique !"
+            "property": "align-items",
+            "expectedValue": "center",
+            "successMessage": "Un centrage parfait !"
         }
     },
     {
         "id": "chap2_ex9",
         "chapterId": 2,
         "chapterTitle": "Chapitre 2 : L'élégance du Design (CSS)",
-        "title": "L'espace entre (Flexbox)",
-        "description": "Dans ta barre de navigation `.nav`, utilise `justify-content: space-between` pour écarter le logo du menu.",
+        "title": "Le Fond Dégradé",
+        "description": "Pour un effet 'Finance Premium', utilise `background: linear-gradient(135deg, #0f172a, #1e293b);` sur le `body`.",
         "startingCode": {
-            "/index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .nav {\n      display: flex;\n      background: #1e293b;\n      color: white;\n      padding: 20px;\n      /* Ajoute l'alignement flex ici */\n    }\n  </style>\n</head>\n<body>\n  <nav class=\"nav\">\n    <div class=\"logo\">QUENTIN BANK</div>\n    <div class=\"menu\">Mon Compte</div>\n  </nav>\n</body>\n</html>"
+            "/index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body {\n      min-height: 100vh;\n      /* Applique le dégradé ici */\n    }\n  </style>\n</head>\n<body>\n</body>\n</html>"
         },
         "validation": {
             "type": "css",
-            "selector": ".nav",
-            "property": "justify-content",
-            "expectedValue": "space-between",
-            "successMessage": "אלוף ה-Flexbox!"
+            "selector": "body",
+            "property": "background-image",
+            "expectedValue": "linear-gradient(135deg, rgb(15, 23, 42), rgb(30, 41, 59))",
+            "successMessage": "Quelle profondeur !"
         }
     },
     {
         "id": "chap2_ex10",
         "chapterId": 2,
         "chapterTitle": "Chapitre 2 : L'élégance du Design (CSS)",
-        "title": "Le Grand Défi : La Carte de Crédit",
-        "description": "Stylise cette carte : un fond bleu `#0284c7`, une police `sans-serif`, un texte blanc, un `padding` de `30px`, et un `border-radius` de `20px`.",
+        "title": "Le Grand Défi : Glassmorphism",
+        "description": "Crée une carte futuriste ! Sur `#card`, ajoute :\n- `background: rgba(255, 255, 255, 0.1)`\n- `backdrop-filter: blur(10px)`\n- `border: 1px solid rgba(255, 255, 255, 0.2)`\n- `padding: 40px` et `border-radius: 20px`.",
         "hebrewGreeting": "אתגר אחרון לפרק הזה!",
         "startingCode": {
-            "/index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    #card {\n      /* Tout est à faire ici ! */\n    }\n  </style>\n</head>\n<body>\n  <div id=\"card\">\n    <h2>QUENTIN PLATINUM</h2>\n    <p>**** **** **** 7777</p>\n    <small>Exp: 12/28</small>\n  </div>\n</body>\n</html>"
+            "/index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { background: #0f172a; height: 100vh; display: flex; justify-content: center; align-items: center; }\n    #card {\n      color: white;\n      font-family: sans-serif;\n      /* Applique le Glassmorphism ici */\n    }\n  </style>\n</head>\n<body>\n  <div id=\"card\">\n    <h2>TRADING DESK</h2>\n    <p>Statut : Connecté</p>\n  </div>\n</body>\n</html>"
         },
         "validation": {
             "type": "css",
             "selector": "#card",
-            "property": "background-color",
-            "expectedValue": "rgb(2, 132, 199)",
-            "successMessage": "מדהים! יש לך תעודה של מעצב אתרים!"
+            "property": "backdrop-filter",
+            "expectedValue": "blur(10px)",
+            "successMessage": "Incroyable ! Tu maîtrises le design moderne !"
         }
     },
     {
@@ -450,15 +450,17 @@
         "id": "chap3_ex7",
         "chapterId": 3,
         "chapterTitle": "Chapitre 3 : L'Animation du Code (JavaScript)",
-        "title": "Interaction Bouton",
-        "description": "Ajoute un écouteur d'événement sur le bouton `#btn` pour qu'au clic, il affiche un `alert('Achat confirmé')`.\n\nUtilise `document.getElementById('btn').onclick = ...`",
+        "title": "Récupérer une valeur",
+        "description": "Pour lire ce que l'utilisateur écrit, utilise `.value`. Récupère la valeur de l'input `#input-somme` et mets-la dans une variable `montant`.",
         "startingCode": {
-            "/index.html": "<!DOCTYPE html>\n<html>\n<body>\n  <button id=\"btn\">Acheter</button>\n  <script>\n    // Ajoute l'événement ici\n  </script>\n</body>\n</html>"
+            "/index.html": "<!DOCTYPE html>\n<html>\n<body>\n  <input id=\"input-somme\" value=\"500\">\n  <script>\n    // Récupère la valeur ici\n    let montant = document.getElementById('input-somme').value;\n  </script>\n</body>\n</html>"
         },
         "validation": {
             "type": "js",
-            "expectedValue": "onclick",
-            "successMessage": "Interface interactive activée !"
+            "property": "globalVar",
+            "variableName": "montant",
+            "expectedValue": "500",
+            "successMessage": "Tu sais maintenant lire les données !"
         }
     },
     {
@@ -499,17 +501,36 @@
         "id": "chap3_ex10",
         "chapterId": 3,
         "chapterTitle": "Chapitre 3 : L'Animation du Code (JavaScript)",
-        "title": "Le Grand Défi : Le Convertisseur",
-        "description": "Crée une fonction `convertir(euros)` qui retourne le montant en Shekels (multiplié par 4).",
+        "title": "Le Grand Défi : Calculateur de Rendement",
+        "description": "Crée une fonction `calculer()` qui :\n1. Récupère la `.value` de l'input `#placement`.\n2. Multiplie par 1.1 (gain de 10%).\n3. Affiche le résultat dans le paragraphe `#resultat`.\n\n(Utilise `innerText`).",
         "hebrewGreeting": "אתגר אחרון!",
         "startingCode": {
-            "/index.html": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    // Crée la fonction de conversion ici\n  </script>\n</body>\n</html>"
+            "/index.html": "<!DOCTYPE html>\n<html>\n<body>\n  <input id=\"placement\" type=\"number\" value=\"1000\">\n  <button onclick=\"calculer()\">Calculer Profit</button>\n  <p id=\"resultat\">---</p>\n  \n  <script>\n    function calculer() {\n      // Code ici\n    }\n  </script>\n</body>\n</html>"
         },
         "validation": {
-            "type": "js",
-            "property": "functionExists",
-            "functionName": "convertir",
-            "successMessage": "Félicitations ! Tu es un développeur Web complet ! 🎉"
+            "type": "dom",
+            "selector": "#resultat",
+            "property": "innerText",
+            "expectedValue": "1100",
+            "successMessage": "Félicitations ! Tu as toutes les compétences pour le projet final ! 🎉"
+        }
+    },
+    {
+        "id": "chap4_project",
+        "chapterId": 4,
+        "chapterTitle": "Chapitre 4 : La Synthèse - Projet Final",
+        "title": "Le Mediterranean Finance Dashboard",
+        "description": "C'est l'heure du test ultime ! Quentin, tu vas construire ton propre Dashboard financier de A à Z.\n\n🎯 Objectifs techniques :\n\n**1. Structure (HTML) :**\n- Un `<header>` avec un `<h1>` ('Q-Investment') et un logo (`<img>`).\n- Un `<main>` contenant une `div#dashboard-card`.\n- Un formulaire `#finance-form` avec un `<input type=\"number\">` pour le montant et un `<button id=\"btn-simuler\">`.\n- Un élément `<p id=\"resultat\">` pour afficher les calculs.\n\n**2. Design (CSS) :**\n- Utilise la police `Rubik` ou `Inter`.\n- Applique un fond dégradé au `body` (`linear-gradient`).\n- Donne à ta `.card` un effet **Glassmorphism** (fond blanc transparent, flou de derrière, bordure fine).\n- Utilise **Flexbox** pour centrer ta carte au milieu de l'écran.\n\n**3. Logique (JS) :**\n- Crée une fonction `calculer(montant)` qui ajoute 10% au montant.\n- Ajoute un écouteur de clic sur le bouton pour récupérer la valeur de l'input, faire le calcul, et l'afficher dans `#resultat`.\n- Affiche un message de bienvenue dynamique dans la console ou un élément avec l'heure actuelle.\n",
+        "hebrewGreeting": "בהצלחה בפרויקט הגמר!",
+        "startingCode": {
+            "/index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Écris ton CSS ici */\n  </style>\n</head>\n<body>\n  <!-- Structure ton HTML ici -->\n  \n  <script>\n    // Ajoute ta logique JS ici\n  </script>\n</body>\n</html>"
+        },
+        "validation": {
+            "type": "dom",
+            "selector": "#btn-simuler",
+            "property": "innerText",
+            "expectedValue": "Simuler",
+            "successMessage": "PROJET TERMINÉ ! Félicitations Quentin, tu es officiellement un développeur Web ! 🏆✨"
         }
     }
 ]
