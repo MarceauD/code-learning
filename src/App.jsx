@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import SandpackRunner from './components/SandpackRunner';
+import LessonPanel from './components/LessonPanel';
 import { useProgress } from './hooks/useProgress';
 import exercisesData from './data/exercises.json';
 
@@ -69,6 +70,8 @@ function App() {
                         <h1>{currentExercise.title}</h1>
 
                         <div className="description" dangerouslySetInnerHTML={formatDescription(currentExercise.description)} />
+
+                        <LessonPanel lesson={currentExercise.lesson} />
 
                         {completedExercises.includes(currentExerciseId) && (
                             <button className="btn-primary mt-4 hebrew-text" onClick={handleNextExercise}>

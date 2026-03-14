@@ -46,6 +46,7 @@ h3,
     display: flex;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 /* Sidebar with Glassmorphism */
@@ -141,12 +142,15 @@ h3,
     display: flex;
     flex-direction: column;
     background: transparent;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .exercise-view {
     display: flex;
     flex: 1;
-    height: 100%;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .instructions-panel {
@@ -156,11 +160,23 @@ h3,
     background: var(--bg-panel);
     backdrop-filter: blur(8px);
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
+    display: block;
     border-right: 1px solid var(--border);
     z-index: 5;
     overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Scrollbar fine pour le panneau instructions */
+.instructions-panel::-webkit-scrollbar {
+    width: 4px;
+}
+
+.instructions-panel::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
 }
 
 .chapter-progress-container {
@@ -245,7 +261,8 @@ h3,
     box-shadow: 0 4px 12px rgba(3, 105, 161, 0.15);
     cursor: pointer;
     width: 100%;
-    margin-top: auto;
+    margin-top: 2rem;
+    display: block;
 }
 
 .btn-primary:hover {
@@ -260,7 +277,9 @@ h3,
     flex-direction: column;
     padding: 1.5rem 2rem 2rem;
     background: transparent;
-    height: 100vh;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .sandpack-container {
@@ -300,18 +319,25 @@ h3,
 }
 
 .success-banner {
-    background: #ecfdf5;
-    color: #059669;
-    padding: 1rem 1.5rem;
-    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    justify-content: flex-end;
+    gap: 0.75rem;
+    color: #059669;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid #059669;
+    background: rgba(5, 150, 105, 0.05);
+    border-radius: 0 var(--radius-sm, 6px) var(--radius-sm, 6px) 0;
     width: 100%;
+    letter-spacing: 0.01em;
+}
+
+.success-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #059669;
 }
 
 .success-wow {
@@ -336,17 +362,16 @@ h3,
     font-family: 'Rubik', sans-serif;
 }
 
-.animated-pulse {
-    animation: pulse 2.5s infinite;
-    background: rgba(255, 255, 255, 0.4);
-    color: var(--text-secondary);
+.pending-banner {
+    color: #94a3b8;
+    font-size: 0.8rem;
     font-weight: 500;
-    padding: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     text-align: center;
-    border-radius: var(--radius-md);
-    border: 1px dashed var(--border);
     width: 100%;
-    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--border);
 }
 
 @keyframes pulse {
@@ -365,4 +390,181 @@ h3,
 ::selection {
     background: var(--primary-light);
     color: white;
+}
+
+/* ─────────────────── LessonPanel ─────────────────── */
+.lesson-panel {
+    margin-top: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.lesson-panel--open {
+    box-shadow: 0 4px 16px rgba(3, 105, 161, 0.08);
+}
+
+.lesson-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--primary-glow);
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: background 0.2s;
+}
+
+.lesson-toggle:hover {
+    background: rgba(14, 165, 233, 0.12);
+}
+
+.lesson-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lesson-content {
+    background: var(--bg-panel);
+    padding: 1.25rem;
+    border-top: 1px solid var(--border);
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lesson-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    background: #fef9c3;
+    border: 1px solid #fde047;
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #854d0e;
+    font-weight: 500;
+}
+
+.lesson-tip-icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.lesson-explanation {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.lesson-p {
+    margin: 0 0 0.75rem;
+}
+
+.lesson-h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 1rem 0 0.5rem;
+}
+
+.lesson-h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0.75rem 0 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.lesson-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1rem 0;
+}
+
+.lesson-code-block {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin: 1rem 0;
+    border: 1px solid #334155;
+}
+
+.lesson-code-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.lesson-code-pre {
+    margin: 0;
+    padding: 1rem;
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.lesson-key-points {
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+}
+
+.lesson-key-points-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem;
+}
+
+.lesson-key-points ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+}
+
+.lesson-key-points li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+}
+
+.lesson-key-points li .inline-code {
+    font-size: 0.8em;
 }

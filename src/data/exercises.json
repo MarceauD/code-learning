@@ -15,6 +15,16 @@
             "property": "innerText",
             "expectedValue": "Shalom Olam",
             "successMessage": "כל הכבוד!"
+        },
+        "lesson": {
+            "tip": "La balise h1 est le titre principal de la page. Il ne doit y en avoir qu'un seul.",
+            "explanation": "En HTML, le contenu visible d'une page est placé entre des **balises**. Une balise ouvrante `<h1>` et une balise fermante `</h1>` encadrent le texte.\n\nLe navigateur interprète ces balises pour afficher le contenu correctement.",
+            "codeExample": "<h1>Je suis le titre principal</h1>\n<p>Je suis un paragraphe.</p>",
+            "keyPoints": [
+                "Les balises HTML s'ouvrent avec `<balise>` et se ferment avec `</balise>`",
+                "`h1` est le titre le plus grand (de `h1` à `h6`)",
+                "Tout le contenu visible est dans la balise `<body>`"
+            ]
         }
     },
     {
@@ -33,6 +43,16 @@
             "property": "outerHTML",
             "condition": "isProperlyClosed",
             "successMessage": "מצוין!"
+        },
+        "lesson": {
+            "tip": "Toujours vérifier que chaque balise ouvrante a sa balise fermante correspondante !",
+            "explanation": "Un bug HTML fréquent : oublier de fermer une balise ou utiliser `<p>` au lieu de `</p>` pour la fermante.\n\nLe navigateur essaie de corriger ces erreurs tout seul, mais le résultat peut être imprévisible.",
+            "codeExample": "<!-- ❌ Mauvais -->\n<p>Mon texte<p>\n\n<!-- ✅ Correct -->\n<p>Mon texte</p>",
+            "keyPoints": [
+                "Une balise fermante s'écrit avec un slash : `</p>`",
+                "Chaque balise ouvrante doit avoir sa balise fermante",
+                "Les outils de validation HTML peuvent t'aider à trouver les erreurs"
+            ]
         }
     },
     {
@@ -50,6 +70,16 @@
             "property": "childrenLength",
             "expectedValue": 3,
             "successMessage": "בתאבון!"
+        },
+        "lesson": {
+            "tip": "Les listes sont parfaites pour organiser des données financières : actifs, transactions, etc.",
+            "explanation": "HTML propose deux types de listes :\n- `<ul>` (unordered list) pour les listes à puces\n- `<ol>` (ordered list) pour les listes numérotées\n\nChaque élément de liste est encadré par `<li>...</li>`.",
+            "codeExample": "<ul>\n  <li>Apple (AAPL)</li>\n  <li>Tesla (TSLA)</li>\n  <li>Amazon (AMZN)</li>\n</ul>",
+            "keyPoints": [
+                "`<ul>` crée une liste à puces",
+                "`<ol>` crée une liste numérotée",
+                "Chaque item est dans un `<li>`"
+            ]
         }
     },
     {
@@ -67,6 +97,16 @@
             "property": "innerText",
             "expectedValue": "Investir",
             "successMessage": "יפה מאוד!"
+        },
+        "lesson": {
+            "tip": "L'attribut `id` permet de cibler un élément précis en CSS ou JavaScript.",
+            "explanation": "La balise `<button>` crée un bouton cliquable. Elle peut contenir du texte ou des icônes.\n\nOn peut lui donner un **ID unique** avec l'attribut `id=\"nom\"`. Cet ID permet de le retrouver facilement avec JavaScript.",
+            "codeExample": "<button id=\"btn-acheter\">Acheter</button>\n<button id=\"btn-vendre\">Vendre</button>",
+            "keyPoints": [
+                "`<button>` crée un bouton interactif",
+                "L'attribut `id` identifie un élément de façon unique",
+                "Le texte entre les balises s'affiche sur le bouton"
+            ]
         }
     },
     {
@@ -84,6 +124,16 @@
             "property": "href",
             "expectedValue": "https://www.tase.co.il",
             "successMessage": "קסם!"
+        },
+        "lesson": {
+            "tip": "Le Web est une toile de liens. Les liens (`<a>`) sont le fondement de la navigation.",
+            "explanation": "La balise `<a>` (anchor = ancre) crée un **lien hypertexte**. L'attribut `href` (hypertext reference) indique l'adresse de destination.",
+            "codeExample": "<a href=\"https://finance.yahoo.com\">Yahoo Finance</a>\n\n<!-- Ouvrir dans un nouvel onglet -->\n<a href=\"https://bloomberg.com\" target=\"_blank\">Bloomberg</a>",
+            "keyPoints": [
+                "`<a href=\"URL\">texte</a>` crée un lien cliquable",
+                "L'attribut `href` contient l'URL de destination",
+                "`target=\"_blank\"` ouvre le lien dans un nouvel onglet"
+            ]
         }
     },
     {
@@ -101,6 +151,16 @@
             "property": "alt",
             "expectedValue": "Plage de Tel Aviv",
             "successMessage": "תותח!"
+        },
+        "lesson": {
+            "tip": "L'attribut `alt` est aussi important pour l'accessibilité que pour le SEO.",
+            "explanation": "La balise `<img>` affiche une image. Elle a deux attributs essentiels :\n- `src` : le chemin ou l'URL de l'image\n- `alt` : une description textuelle de l'image (si elle ne charge pas)\n\nNote : `<img>` est une **balise auto-fermante**, elle n'a pas de `</img>`.",
+            "codeExample": "<img \n  src=\"https://example.com/photo.jpg\" \n  alt=\"Description de la photo\" \n/>",
+            "keyPoints": [
+                "`src` indique la source (URL) de l'image",
+                "`alt` fournit une description textuelle alternative",
+                "`<img>` est auto-fermante : pas de balise fermante `</img>`"
+            ]
         }
     },
     {
@@ -118,6 +178,16 @@
             "property": "innerText",
             "expectedValue": "Contenu",
             "successMessage": "מושלם!"
+        },
+        "lesson": {
+            "tip": "Utiliser des balises sémantiques aide les moteurs de recherche à comprendre ta page.",
+            "explanation": "HTML5 a introduit des balises **sémantiques** qui décrivent le rôle de leur contenu :\n- `<header>` : en-tête de page\n- `<main>` : contenu principal\n- `<footer>` : pied de page\n- `<nav>` : navigation\n- `<section>` : section de contenu\n\nCes balises remplacent avantageusement les `<div>` génériques.",
+            "codeExample": "<header>\n  <h1>Q-Bank Dashboard</h1>\n</header>\n<main>\n  <p>Mes investissements...</p>\n</main>\n<footer>\n  <p>&copy; 2024 Q-Bank</p>\n</footer>",
+            "keyPoints": [
+                "`<header>` contient l'en-tête (logo, titre, navigation)",
+                "`<main>` est le contenu principal — unique par page",
+                "`<footer>` contient les informations de bas de page"
+            ]
         }
     },
     {
@@ -135,6 +205,16 @@
             "property": "placeholder",
             "expectedValue": "Votre prénom",
             "successMessage": "אלוף!"
+        },
+        "lesson": {
+            "tip": "Les formulaires (`<form>`) sont le point d'entrée des données utilisateur dans toute application.",
+            "explanation": "La balise `<input>` crée un champ de saisie. Elle a plusieurs attributs utiles :\n- `type` : le type de données (`text`, `email`, `password`, `number`...)\n- `placeholder` : texte grisé d'indication\n- `id` : pour le lier à un `<label>`",
+            "codeExample": "<form>\n  <label for=\"prenom\">Prénom :</label>\n  <input type=\"text\" id=\"prenom\" placeholder=\"Ex: Quentin\">\n  <button type=\"submit\">Envoyer</button>\n</form>",
+            "keyPoints": [
+                "`<input>` est auto-fermante (pas de `</input>`)",
+                "`placeholder` affiche un texte d'indication grisé",
+                "`type=\"text\"` est le type par défaut si non spécifié"
+            ]
         }
     },
     {
@@ -152,6 +232,16 @@
             "property": "type",
             "expectedValue": "number",
             "successMessage": "Parfait pour les calculs !"
+        },
+        "lesson": {
+            "tip": "Utilise `type=\"number\"` pour les champs monétaires — le navigateur bloquera automatiquement les lettres.",
+            "explanation": "L'attribut `type` de `<input>` change complètement le comportement du champ :\n- `type=\"text\"` : texte libre\n- `type=\"number\"` : chiffres seulement (flèches haut/bas)\n- `type=\"email\"` : validation email\n- `type=\"password\"` : texte masqué\n\nPour la finance, `type=\"number\"` est idéal.",
+            "codeExample": "<input type=\"number\" id=\"montant\" placeholder=\"Ex: 5000\">",
+            "keyPoints": [
+                "`type=\"number\"` n'accepte que des chiffres",
+                "On peut ajouter `min=\"0\"` pour refuser les valeurs négatives",
+                "`.value` en JS retournera une chaîne, pense à `parseFloat()`"
+            ]
         }
     },
     {
@@ -188,6 +278,16 @@
             "property": "color",
             "expectedValue": "rgb(2, 132, 199)",
             "successMessage": "יופי של צבע!"
+        },
+        "lesson": {
+            "tip": "Les couleurs en CSS peuvent s'écrire en hexadécimal (`#0284c7`), en RGB ou en nom (`blue`).",
+            "explanation": "Le CSS (Cascading Style Sheets) permet de **styler** le HTML. On cible un élément avec un **sélecteur**, puis on définit des propriétés.\n\nLa propriété `color` change la couleur du **texte**. Pour le fond, c'est `background-color`.",
+            "codeExample": "h1 {\n  color: #0284c7;  /* Bleu Mediterranean */\n}\n\np {\n  color: #64748b;  /* Gris secondaire */\n}",
+            "keyPoints": [
+                "La syntaxe CSS : `sélecteur { propriété: valeur; }`",
+                "`color` change la couleur du **texte**",
+                "Les couleurs hex : `#RRGGBB` (rouge, vert, bleu en hexa)"
+            ]
         }
     },
     {
@@ -205,6 +305,16 @@
             "property": "background-color",
             "expectedValue": "rgb(248, 250, 252)",
             "successMessage": "הרבה יותר נעים לעין!"
+        },
+        "lesson": {
+            "tip": "Le blanc pur `#ffffff` fatigue les yeux. Les designers utilisent des blancs cassés comme `#f8fafc`.",
+            "explanation": "La propriété `background-color` définit la couleur de fond d'un élément.\n\nAppliquée au `body`, elle change le fond de toute la page. C'est souvent la première chose que l'on customise dans un design.",
+            "codeExample": "body {\n  background-color: #f8fafc;\n}",
+            "keyPoints": [
+                "`background-color` change la couleur de fond",
+                "Appliqué au `body`, ça change tout l'arrière-plan de la page",
+                "Les variations de blanc (`#f8fafc`, `#f1f5f9`) sont plus plaisantes visuellement"
+            ]
         }
     },
     {
@@ -222,6 +332,16 @@
             "property": "font-family",
             "expectedValue": "sans-serif",
             "successMessage": "קריא ומקצועי!"
+        },
+        "lesson": {
+            "tip": "Les grandes sociétés financières comme Bloomberg ou JPMorgan utilisent des polices sans-serif pour leur clarté.",
+            "explanation": "La propriété `font-family` définit la police utilisée. On peut indiquer une liste de polices de secours.\n\nLes deux grandes familles :\n- **Serif** (avec empattements) : Times New Roman, Georgia — classique, journaux\n- **Sans-serif** (sans empattements) : Arial, Inter — moderne, web",
+            "codeExample": "body {\n  font-family: 'Inter', 'Helvetica', sans-serif;\n}",
+            "keyPoints": [
+                "`font-family` définit la police du texte",
+                "Mets toujours une police générique en dernier (`sans-serif`)",
+                "Pour importer Google Fonts, ajoute un `<link>` dans le `<head>`"
+            ]
         }
     },
     {
@@ -256,6 +376,16 @@
             "property": "margin-bottom",
             "expectedValue": "40px",
             "successMessage": "מושלם, המרווח מעולה!"
+        },
+        "lesson": {
+            "tip": "En design, l'espace vide est aussi important que le contenu. Il guide l'œil et crée de la hiérarchie.",
+            "explanation": "La `margin` crée un espace **extérieur** entre un élément et ses voisins.\n\nUn cas classique : mettre une `margin-bottom` sur les titres pour les séparer du contenu qui suit.",
+            "codeExample": "h1 {\n  margin-bottom: 40px;\n}\n\n/* Centrer horizontalement un élément en bloc */\n.container {\n  margin: 0 auto;  /* Haut/bas: 0, Gauche/droite: auto */\n}",
+            "keyPoints": [
+                "`margin` crée un espace extérieur autour de l'élément",
+                "`margin: 0 auto;` centre un élément horizontalement",
+                "Les margins vertical peuvent fusionner (margin collapse)"
+            ]
         }
     },
     {
@@ -273,6 +403,16 @@
             "property": "border-top-width",
             "expectedValue": "2px",
             "successMessage": "Superbe encadrement !"
+        },
+        "lesson": {
+            "tip": "Une bordure fine et colorée suffit souvent pour créer un effet premium. Évite les bordures trop épaisses.",
+            "explanation": "La propriété `border` définit la bordure d'un élément. Elle prend 3 valeurs :\n1. **Épaisseur** : `2px`\n2. **Style** : `solid`, `dashed`, `dotted`\n3. **Couleur** : `#0284c7` ou autre",
+            "codeExample": ".card {\n  border: 2px solid #0284c7;\n  /* Ou cibler un seul côté */\n  border-left: 4px solid #059669;  /* Vert */\n}",
+            "keyPoints": [
+                "`border: taille style couleur;` définit la bordure",
+                "Styles disponibles : `solid`, `dashed`, `dotted`, `none`",
+                "On peut cibler : `border-top`, `border-right`, `border-bottom`, `border-left`"
+            ]
         }
     },
     {
@@ -290,6 +430,16 @@
             "property": "border-top-left-radius",
             "expectedValue": "15px",
             "successMessage": "ממש מקצועי!"
+        },
+        "lesson": {
+            "tip": "Un `border-radius: 50%` crée un cercle parfait (si l'élément est carré).",
+            "explanation": "La propriété `border-radius` arrondit les coins d'un élément. C'est l'une des propriétés les plus utilisées dans le design moderne.\n\n- Valeur en `px` : arrondi fixe\n- Valeur en `%` : relatif à la taille (50% = cercle)",
+            "codeExample": "button {\n  border-radius: 8px;    /* Léger arrondi */\n}\n\n.pill {\n  border-radius: 9999px; /* Forme de pilule */\n}\n\n.avatar {\n  border-radius: 50%;    /* Cercle parfait */\n}",
+            "keyPoints": [
+                "`border-radius` arrondit les coins",
+                "Valeur en `px` : taille fixe de l'arrondi",
+                "`50%` sur un carré = cercle"
+            ]
         }
     },
     {
@@ -307,6 +457,16 @@
             "property": "align-items",
             "expectedValue": "center",
             "successMessage": "Un centrage parfait !"
+        },
+        "lesson": {
+            "tip": "Flexbox est la solution moderne au problème du centrage vertical, qui était un cauchemar en CSS avant !",
+            "explanation": "**Flexbox** est un système de mise en page qui permet d'aligner et distribuer des éléments dans un conteneur.\n\nPour centrer quelque chose au milieu de l'écran :\n1. `display: flex` sur le conteneur\n2. `justify-content: center` pour l'axe horizontal\n3. `align-items: center` pour l'axe vertical",
+            "codeExample": ".centrage-parfait {\n  display: flex;\n  justify-content: center;  /* Horizontal */\n  align-items: center;       /* Vertical */\n  height: 100vh;\n}",
+            "keyPoints": [
+                "`display: flex` active Flexbox",
+                "`justify-content` aligne sur l'axe principal (horizontal par défaut)",
+                "`align-items` aligne sur l'axe secondaire (vertical par défaut)"
+            ]
         }
     },
     {
@@ -324,6 +484,16 @@
             "property": "background-image",
             "expectedValue": "linear-gradient(135deg, rgb(15, 23, 42), rgb(30, 41, 59))",
             "successMessage": "Quelle profondeur !"
+        },
+        "lesson": {
+            "tip": "Les dégradés (gradients) sont la signature visuelle des interfaces financières et crypto modernes.",
+            "explanation": "La fonction `linear-gradient()` crée un dégradé entre deux ou plusieurs couleurs.\n\nSyntaxe : `linear-gradient(direction, couleur1, couleur2)`\n- Direction : `135deg` (diagonal), `to right`, `to bottom`...",
+            "codeExample": "body {\n  /* Dégradé sombre finance */\n  background: linear-gradient(135deg, #0f172a, #1e293b);\n\n  /* Dégradé bleu/violet */\n  background: linear-gradient(to right, #0284c7, #7c3aed);\n}",
+            "keyPoints": [
+                "`linear-gradient()` crée un dégradé linéaire",
+                "Le premier argument est la direction (angle en degrés ou mot-clé)",
+                "On peut donner l'angle exact : `135deg`, `0deg` (vers le haut), etc."
+            ]
         }
     },
     {
@@ -342,6 +512,16 @@
             "property": "backdrop-filter",
             "expectedValue": "blur(10px)",
             "successMessage": "Incroyable ! Tu maîtrises le design moderne !"
+        },
+        "lesson": {
+            "tip": "Le Glassmorphism est très utilisé dans les interfaces Apple, Windows 11, et les apps FinTech premium.",
+            "explanation": "Le **Glassmorphism** est un style de design qui simule un verre dépoli :\n1. `background: rgba(255,255,255,0.1)` : fond blanc transparent\n2. `backdrop-filter: blur(10px)` : flou de l'arrière-plan (effet verre)\n3. `border: 1px solid rgba(255,255,255,0.2)` : bordure légèrement visible",
+            "codeExample": ".glass-card {\n  background: rgba(255, 255, 255, 0.1);\n  backdrop-filter: blur(10px);\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  border-radius: 20px;\n  padding: 40px;\n}",
+            "keyPoints": [
+                "`backdrop-filter: blur()` floute CE QUI EST DERRIÈRE l'élément",
+                "`rgba(r,g,b,alpha)` : `alpha` est la transparence (0=transparent, 1=opaque)",
+                "Il faut un fond visuel derrière la carte pour que l'effet soit visible"
+            ]
         }
     },
     {
@@ -360,6 +540,16 @@
             "property": "innerText",
             "expectedValue": "Shalom JS",
             "successMessage": "C'est vivant !"
+        },
+        "lesson": {
+            "tip": "JavaScript s'exécute dans le navigateur — c'est la seule langue que le navigateur comprend directement.",
+            "explanation": "Le **JavaScript** est le langage qui rend les pages web **interactives**. Il peut lire et modifier le contenu HTML en temps réel.\n\n`document` représente toute la page web.\n`getElementById()` cherche un élément par son `id`.\n`.innerText` lit ou modifie le texte visible.",
+            "codeExample": "// Changer le texte d'un élément\ndocument.getElementById('titre').innerText = 'Nouveau texte';\n\n// Changer le style\ndocument.getElementById('titre').style.color = 'red';",
+            "keyPoints": [
+                "`document.getElementById('id')` sélectionne un élément par son ID",
+                "`.innerText` lit ou écrit le texte visible d'un élément",
+                "Le `<script>` doit être placé avant la fermeture de `</body>`"
+            ]
         }
     },
     {
@@ -377,6 +567,16 @@
             "variableName": "capital",
             "expectedValue": 1000,
             "successMessage": "Ton premier dépôt est fait !"
+        },
+        "lesson": {
+            "tip": "En finance, une variable JS peut représenter un solde, un taux d'intérêt ou un rendement.",
+            "explanation": "Une **variable** est une boite nommée qui stocke une valeur.\n\nEn JavaScript moderne, on utilise :\n- `let` : pour les valeurs qui **peuvent changer**\n- `const` : pour les valeurs **constantes** (Ex: taux fixe)\n- (Ancien) `var` : à éviter dans le code moderne",
+            "codeExample": "let capital = 10000;         // Peut changer\nconst taux = 0.05;           // Constant (5%)\n\n// Afficher dans la console\nconsole.log(capital);        // 10000",
+            "keyPoints": [
+                "`let` déclare une variable réassignable",
+                "`const` déclare une constante (ne peut pas être réassignée)",
+                "Le nom d'une variable ne peut pas contenir d'espaces"
+            ]
         }
     },
     {
@@ -410,6 +610,16 @@
             "property": "functionExists",
             "functionName": "direShalom",
             "successMessage": "Shalom à toi aussi !"
+        },
+        "lesson": {
+            "tip": "Une fonction est un bloc de code réutilisable. C'est le fondement de tout programme structuré.",
+            "explanation": "Une **fonction** est un bloc de code qu'on peut appeler plusieurs fois.\n\nSyntaxe de déclaration :\n`function nom(paramètres) { ...code... }`\n\nSyntaxe d'appel :\n`nom()` ou `nom(valeur)`",
+            "codeExample": "// Déclaration\nfunction direShalom() {\n  console.log('Shalom !');\n}\n\n// Appel : exécute la fonction\ndireShalom();  // Affiche 'Shalom !'",
+            "keyPoints": [
+                "Déclarer ≠ appeler : `function foo(){}` vs `foo()`",
+                "Une fonction peut prendre des **paramètres** en entrée",
+                "Une fonction peut **retourner** une valeur avec `return`"
+            ]
         }
     },
     {
@@ -427,6 +637,16 @@
             "property": "innerText",
             "expectedValue": "Vendre",
             "successMessage": "Bonne décision financière !"
+        },
+        "lesson": {
+            "tip": "Les conditions sont la base de toute logique métier : si le prix monte, vendre ; si il descend, acheter.",
+            "explanation": "Une **condition `if`** exécute du code seulement si une condition est vraie.\n\nSyntaxe :\n```\nif (condition) {\n  // Code exécuté si VRAI\n} else {\n  // Code exécuté si FAUX\n}\n```",
+            "codeExample": "let prix = 150;\n\nif (prix > 100) {\n  document.getElementById('signal').innerText = 'Vendre';\n} else {\n  document.getElementById('signal').innerText = 'Conserver';\n}",
+            "keyPoints": [
+                "`if (condition)` exécute le code si la condition est vraie",
+                "Opérateurs de comparaison : `>` `<` `>=` `<=` `===` `!==`",
+                "`else` est optionnel, il gère le cas contraire"
+            ]
         }
     },
     {
@@ -461,6 +681,16 @@
             "variableName": "montant",
             "expectedValue": "500",
             "successMessage": "Tu sais maintenant lire les données !"
+        },
+        "lesson": {
+            "tip": "Toute application web bancaire ou e-commerce repose sur la lecture de valeurs de formulaires.",
+            "explanation": "La propriété `.value` d'un `<input>` permet de **lire ce que l'utilisateur a saisi**.\n\nImportant : `.value` retourne toujours une chaîne de caractères (`string`). Pour faire des calculs, il faut la convertir avec `parseFloat()` ou `parseInt()`.",
+            "codeExample": "// Lire la valeur\nlet input = document.getElementById('somme');\nlet valeur = input.value;  // Ex: '1000' (string)\n\n// Convertir pour les calculs\nlet montant = parseFloat(valeur);  // 1000 (number)",
+            "keyPoints": [
+                "`.value` retourne une `string` (chaîne de caractères)",
+                "Utilise `parseFloat()` pour convertir en nombre décimal",
+                "Utilise `parseInt()` pour convertir en nombre entier"
+            ]
         }
     },
     {
@@ -513,6 +743,16 @@
             "property": "innerText",
             "expectedValue": "1100",
             "successMessage": "Félicitations ! Tu as toutes les compétences pour le projet final ! 🎉"
+        },
+        "lesson": {
+            "tip": "C'est exactement la logique du projet final ! Récupérer → Calculer → Afficher.",
+            "explanation": "C'est la **boucle complète** de toute application de calcul financière :\n1. **Récupérer** la valeur de l'input avec `.value`\n2. **Convertir** en nombre avec `parseFloat()`\n3. **Calculer** avec des opérations arithmétiques\n4. **Afficher** le résultat avec `.innerText`",
+            "codeExample": "function calculer() {\n  // 1. Récupérer\n  let valeur = document.getElementById('placement').value;\n  \n  // 2. Convertir + Calculer\n  let resultat = parseFloat(valeur) * 1.1;\n  \n  // 3. Afficher\n  document.getElementById('resultat').innerText = resultat;\n}",
+            "keyPoints": [
+                "`parseFloat(input.value)` convertit la saisie en nombre",
+                "Le résultat peut être affiché avec `.innerText = valeur`",
+                "La fonction est appelée via `onclick=\"calculer()\"` sur le bouton"
+            ]
         }
     },
     {

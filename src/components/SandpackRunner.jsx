@@ -170,12 +170,16 @@ export default function SandpackRunner({ startingCode, validationConfig, onSucce
 
             <div className="validation-status">
                 {isValid ? (
-                    <div className="success-banner hebrew-text success-wow">
-                        <span>✨ {validationConfig?.successMessage || "כל הכבוד!"} ✨</span>
+                    <div className="success-banner success-wow">
+                        <svg className="success-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
+                            <path d="M6.5 10.5L8.5 12.5L13.5 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <span>{validationConfig?.successMessage || 'Exercice validé'}</span>
                     </div>
                 ) : (
-                    <div className="pending-banner animated-pulse">
-                        <span>בודק...</span>
+                    <div className="pending-banner">
+                        <span>En attente de validation</span>
                     </div>
                 )}
             </div>
